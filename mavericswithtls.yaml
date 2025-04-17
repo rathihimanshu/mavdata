@@ -1,0 +1,9 @@
+http:                     # inbound listener
+  address: ":443"         # 443 keeps it simple; use 8443 if 443 is taken
+  tls: maverics-tls       # <‑‑ reference to the TLS object below
+
+tls:                      # outbound + inbound TLS objects live here
+  maverics-tls:
+    certFile: /etc/maverics/certs/server.crt
+    keyFile:  /etc/maverics/certs/server.key
+    minVersion: 1.2       # default, but good to be explicit
