@@ -1,0 +1,17 @@
+http:
+  address: :80
+
+apps:
+  - name: myWebServerProxy
+    type: proxy
+    routePatterns:
+      - 172.31.18.114/
+      - localhost/
+    upstream: http://172.31.83.49
+    preserveHost: false
+    policies:
+      - location: /
+        authentication:
+          allowUnauthenticated: true
+        authorization:
+          allowAll: true
