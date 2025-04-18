@@ -1,0 +1,21 @@
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip build-essential
+python3 -m venv venv
+source venv/bin/activate          # each time you work on the project
+pip install --upgrade pip
+pip install Flask authlib
+
+
+pip install authlib werkzeug flask requests
+export AUTHLIB_INSECURE_TRANSPORT=1     # Authlib  ⚠ dev‑only! :contentReference[oaicite:0]{index=0}
+export OAUTHLIB_INSECURE_TRANSPORT=1    # oauthlib (used under the hood) :contentReference[oaicite:1]{index=1}
+
+
+Ensure to Add your callback URL in Amazon Cognito
+
+source venv/bin/activate
+export COGNITO_CLIENT_ID='19jn3ufec022rhpdm2nu6lndcd'
+export COGNITO_CLIENT_SECRET='1d5s0sj1b85nnd7bdgltgrct7vdh79i9um5j4313kj0uaf0hhtbp'
+python app.py
+
+connect on port 5001
