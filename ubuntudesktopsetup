@@ -1,0 +1,16 @@
+Set up Ubuntu Desktop 
+
+
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+sudo apt-get install --assume-yes ./chrome-remote-desktop_current_amd64.deb
+sudo apt update && sudo apt upgrade
+apt install slim
+apt install ubuntu-desktop
+reboot
+service slim start
+
+Go to - https://remotedesktop.google.com/headless
+Choose Set Up Another Computer, get the commands for debian and run them on ubuntu machine.
+
+
+DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0Ab_5qlltBGkhyG00uCgetxJEr-nBKXwlWrW5wtG-6J0ovmJ-2JGGDy6FFO-nPlyhMKPZAQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) --user-name=ubuntu
